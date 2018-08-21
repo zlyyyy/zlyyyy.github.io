@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff419d;
+  background: #c833ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1980,6 +1980,11 @@ pre .javascript .function {
   bottom: 0;
   left: 10px;
   width: 280px;
+}
+@media (max-width: 767px) {
+  .cloud-music {
+    display: none !important;
+  }
 }
 .theme-next #ds-thread #ds-reset {
   color: #555;
