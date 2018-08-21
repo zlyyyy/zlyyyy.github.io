@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5c29;
+  background: #005c94;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1974,6 +1974,12 @@ pre .javascript .function {
 }
 .cc-license img {
   display: inline-block;
+}
+.cloud-music {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  width: 280px;
 }
 .theme-next #ds-thread #ds-reset {
   color: #555;
