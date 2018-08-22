@@ -58,7 +58,7 @@ footer:
   icon: user
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright: Powered By - zlyyyy
+  copyright: Powered By - zlyyyy-
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true
