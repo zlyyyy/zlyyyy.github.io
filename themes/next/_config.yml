@@ -48,7 +48,7 @@ footer:
   #since: 2015
 
   # visitors count
-  counter: true
+  # counter: true
 
   #cloud music
   music: true
@@ -58,7 +58,7 @@ footer:
   icon: user
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright: Powered By - zlyyyy-
+  copyright: Powered By - zlyyyy
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true
@@ -232,7 +232,7 @@ auto_excerpt:
 post_meta:
   item_text: true
   created_at: true
-  updated_at: false
+  updated_at: true
   categories: true
 
 # Post wordcount display settings
@@ -258,7 +258,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -558,7 +558,7 @@ firestore:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>

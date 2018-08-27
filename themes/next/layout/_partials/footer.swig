@@ -44,20 +44,6 @@
 #}</div>
 {% endif %}
 
-{% if theme.footer.counter %}
-    <div class="busuanzi-count">
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="site-uv">
-    <i class="fa fa-user"></i>
-    <span id="busuanzi_value_site_pv"></span>次</span>
-    </span>
-    <span class="site-pv">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_site_uv"></span>人</span>
-    </span>
-    </div>
-{% endif %}
-
 {% if theme.footer.music %}
 <div class="cloud-music">
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id={{ theme.footer.musicid }}&auto=0&height=66"></iframe>
