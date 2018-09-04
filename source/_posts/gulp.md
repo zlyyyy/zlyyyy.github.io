@@ -83,6 +83,9 @@ npm install jshint gulp-jshint
 ```
 
 #### 五、创建gulpfile.js文件
+
+> gulp只有五个方法src，task，dest，run，watch
+
 在项目根目录下创建gulpfile.js文件
 ``` JavaScript
 /*引入gulp及相关插件 require('node_modules里对应模块')*/
