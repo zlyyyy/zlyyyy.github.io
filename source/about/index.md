@@ -9,4 +9,5 @@ type: "about"
 一个二流前端三流设计的自我修养
 ——
 zly
+![image](http://petvmwsqa.bkt.clouddn.com/namwolf_cover.jpg)
 </center>
