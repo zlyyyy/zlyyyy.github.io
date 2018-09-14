@@ -32,13 +32,27 @@ npm install webpack webpack-cli --save-dev
 ```
 #### 四、创建项目文件
 1. 创建项目架构与文件
+![文件架构](http://wx3.sinaimg.cn/mw690/a0bac2d9gy1fv96uwdcxfj204q07gweg.jpg)
+尝试打包
+``` bash
+webpack test.js test.bundle.js
+```
+运行报错
+``` bash
+WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/
 
-    ├── dist                                       // webpack配置文件
-    ├── node_modules                                      // 项目打包路径
-    ├── src                                         // 源码目录
-    │   ├── css                                  
-    │   │   └──  index.js                           // 接口配置
-    │   ├── js                                  // 图片文件
-    │   │   └──  index.js                           // 接口配置
+ERROR in multi test.js test.bundle.js
+Module not found: Error: Can't resolve 'test.bundle.js' in 'F:\webpack-test'
+ @ multi test.js test.bundle.js main[1]
 
+ERROR in multi test.js test.bundle.js
+Module not found: Error: Can't resolve 'test.js' in 'F:\webpack-test'
+ @ multi test.js test.bundle.js main[0]
+```
+> 配置警告
 
+“mode”选项尚未设置，WebPACK将回落到“production”这个值。将“mode”选项设置为“development”或“production”，以启用每个环境的默认值。
+
+您也可以将其设置为“NONE”以禁用任何默认行为。了解更多：HTTPS://WebPACK.JS.Org/Vistus/MODE/
