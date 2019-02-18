@@ -81,6 +81,9 @@ Permission denied (publickey).
 fatal: Could not read from remote repository.
 
 ```
+
+/etc/nginx/vhost# 
+
 ``` JavaScript
 s.test.com.conf 
 
@@ -131,3 +134,52 @@ vim /etc/hosts
 修改hosts文件，在hosts文件里面加上一句
 
 127.0.0.1       localhost.localdomain   music.test.cn
+
+#### 自动化部署脚本
+``` JavaScript
+GIT_HOME=/developer/git-repository/
+DEST_PATH=/product/front/
+
+if [ ! -n "$1" ];
+then
+    echo -e "Please input a project name! You can input as follows:"
+    echo -e "./bilibili-deploy.sh bilibili-vue"
+    exit
+fi
+
+if [ $1 = "bilibili-vue" ];
+then
+    echo -e "---------Enter Project--------"
+    cd $GIT_HOME$1
+else
+    echo -e "Invalid Project Name!"
+    exit
+fi
+
+# clean dist
+echo -e "---------Clean Dist--------"
+rm -rf ./dist
+
+echo -e "---------Git Pull--------"
+git pull
+
+echo -e "---------Yarn Install--------"
+yarn
+
+echo -e "---------Npm Run build--------"
+npm run build
+
+if [ -d "./dist" ];
+then
+    echo -e "---------clean Dist--------"
+    rm -rf $DEST_PATH/dist
+
+    echo -e "---------copy Dist--------"
+    cp -R ./dist $DEST_PATH/$1/
+
+    echo -e "---------Deploy Success--------"
+else
+    echo -e "---------Deploy Fail--------"
+fi
+```
+
