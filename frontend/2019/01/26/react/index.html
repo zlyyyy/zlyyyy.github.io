@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Her head world">
 <meta property="og:description" content="开发环境搭建-这里使用yarn安装yarn 特点  速度超快。    Yarn 缓存了每个下载过的包，所以再次使用时无需重复下载。 同时利用并行下载以最大化资源利用率，因此安装速度更快。  超级安全。   在执行代码之前，Yarn 会通过算法校验每个安装包的完整性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-31T03:23:47.968Z">
+<meta property="og:updated_time" content="2019-02-18T10:01:13.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react基础回顾">
 <meta name="twitter:description" content="开发环境搭建-这里使用yarn安装yarn 特点  速度超快。    Yarn 缓存了每个下载过的包，所以再次使用时无需重复下载。 同时利用并行下载以最大化资源利用率，因此安装速度更快。  超级安全。   在执行代码之前，Yarn 会通过算法校验每个安装包的完整性。">
@@ -361,8 +361,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-31T11:23:47+08:00">
-                2019-01-31
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-18T18:01:13+08:00">
+                2019-02-18
               </time>
             
           </span>
@@ -464,6 +464,39 @@
 </li>
 <li><p>第三种写法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">handleClick=<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//使用箭头函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;点击&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="JSX语法细节"><a href="#JSX语法细节" class="headerlink" title="JSX语法细节"></a>JSX语法细节</h4><ol>
+<li><p>注释写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &#123;<span class="comment">/*注释内容*/</span>&#125;</span><br><span class="line">        或者</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 注释内容</span></span><br><span class="line">        &#125;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;点击&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元素添加class</p>
+<blockquote>
+<p>class会被认为react的类，座椅这里使用className而不是class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">'test'</span>&gt;</span><br><span class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;点击&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>dangerouslySetInnerHTML</p>
+</li>
+</ol>
+<p>在react中，通过富文本编辑器进行操作后的内容，会保留原有的标签样式，并不能正确展示。</p>
+<blockquote>
+<p>在显示时，将内容写入__html对象中即可。具体如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div dangerouslySetInnerHTML = &#123;&#123; <span class="attr">__html</span>: checkMessages.details &#125;&#125; /&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如果是直接调用接口中的值，则是以上的写法，如果是单纯的显示固定的内容，用如下的写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123; <span class="attr">__html</span>: <span class="string">'&lt;div&gt;123&lt;/div&gt;'</span> &#125;&#125; /&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>原理:</p>
+<ol>
+<li>dangerouslySetInnerHTMl 是React标签的一个属性，类似于angular的ng-bind；</li>
+<li>有2个{ { } }，第一{ }代表jsx语法开始，第二个是代表dangerouslySetInnerHTML接收的是一个对象键值对;</li>
+<li>既可以插入DOM，又可以插入字符串；</li>
+<li><p>不合时宜的使用 innerHTML 可能会导致 cross-site scripting (XSS) 攻击。 净化用户的输入来显示的时候，经常会出现错误，不合适的净化也是导致网页攻击的原因之一。dangerouslySetInnerHTML 这个 prop 的命名是故意这么设计的，以此来警告，它的 prop 值（ 一个对象而不是字符串 ）应该被用来表明净化后的数据。</p>
+</li>
+<li><p>htmlFor</p>
+<blockquote>
+<p>由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label htmlFor=<span class="string">"test"</span>&gt;&lt;/label&gt;</span><br><span class="line">&lt;input id=<span class="string">"test"</span> /&gt;</span><br></pre></td></tr></table></figure></blockquote>
 </li>
 </ol>
 
@@ -689,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境搭建-这里使用yarn"><span class="nav-number">1.</span> <span class="nav-text">开发环境搭建-这里使用yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装yarn"><span class="nav-number">1.1.</span> <span class="nav-text">安装yarn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-number">1.2.</span> <span class="nav-text">创建项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动项目"><span class="nav-number">2.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件结构解析-自动创建的初始结构"><span class="nav-number">3.</span> <span class="nav-text">文件结构解析-自动创建的初始结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">4.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6-中的-bind-this"><span class="nav-number">4.1.</span> <span class="nav-text">ES6 中的 bind(this)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境搭建-这里使用yarn"><span class="nav-number">1.</span> <span class="nav-text">开发环境搭建-这里使用yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装yarn"><span class="nav-number">1.1.</span> <span class="nav-text">安装yarn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-number">1.2.</span> <span class="nav-text">创建项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动项目"><span class="nav-number">2.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件结构解析-自动创建的初始结构"><span class="nav-number">3.</span> <span class="nav-text">文件结构解析-自动创建的初始结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">4.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6-中的-bind-this"><span class="nav-number">4.1.</span> <span class="nav-text">ES6 中的 bind(this)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSX语法细节"><span class="nav-number">4.2.</span> <span class="nav-text">JSX语法细节</span></a></li></ol></li></ol></div>
             
 
           </div>
