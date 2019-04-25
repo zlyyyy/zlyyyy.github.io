@@ -121,6 +121,9 @@ server {
     location ~ .*\.do$ {
         proxy_pass http://music.zhaoly.cn;
     }
+    location ~ .*\.(js|css)$ {
+        proxy_pass http://music.zhaoly.cn;
+    }
     location / {
         try_files $uri $uri/ /index.html;
     }
@@ -172,7 +175,7 @@ npm run build
 if [ -d "./dist" ];
 then
     echo -e "---------clean Dist--------"
-    rm -rf $DEST_PATH/dist
+    rm -rf $DEST_PATH/$1/dist
 
     echo -e "---------copy Dist--------"
     cp -R ./dist $DEST_PATH/$1/
@@ -182,4 +185,5 @@ else
     echo -e "---------Deploy Fail--------"
 fi
 ```
+
 
